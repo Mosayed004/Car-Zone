@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download Brochures | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+   <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    /* Brochures Page Styles */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p { font-size: var(--fs-5); }
+
+    .filter-section {
+      background: var(--oxford-blue-2);
+      padding: var(--section-padding);
+      text-align: center;
+      color: var(--light-gray);
+      border-top: 2px solid var(--space-cadet);
+    }
+    .filter-controls {
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      flex-wrap:wrap;
+      margin-bottom:2rem;
+    }
+    .filter-controls label {
+      display:flex;
+      flex-direction:column;
+      color: var(--white);
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-5);
+    }
+    .filter-controls select {
+      margin-top:0.5rem;
+      padding:0.8rem;
+      font-size:var(--fs-5);
+      border-radius:6px;
+      border:1px solid var(--sonic-silver);
+      background: var(--white);
+      color: var(--eerie-black);
+    }
+    .filter-controls button {
+      padding:0.8rem 2rem;
+      font-size: var(--fs-5);
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      transition:background var(--transition);
+      font-family: var(--ff-mulish);
+    }
+    .filter-controls button:hover {
+      background: hsl(1,91%,30%);
+    }
+
+.brochures-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.brochure-item {
+  width: 100%;
+  max-width: 320px;
+  background: var(--oxford-blue-3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+    .brochure-item img {
+      width:100%;
+      height:150px;
+      object-fit:cover;
+      border-radius:6px;
+      margin-bottom:1rem;
+    }
+    .brochure-item h3 {
+      font-family: var(--ff-chakra-petch);
+      color: var(--white);
+      margin-bottom:0.5rem;
+      font-size: var(--fs-4);
+    }
+    .brochure-item a {
+      display:inline-block;
+      margin-top:1rem;
+      padding:0.6rem 1.2rem;
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      border-radius:6px;
+      text-decoration:none;
+      font-family: var(--ff-mulish);
+      transition:background var(--transition);
+    }
+    .brochure-item a:hover { background: hsl(1,91%,30%); }
+    .brochure-item:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(255,80,80,0.3); }
+    #brochureHero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+#brochureHero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#brochureHero .hero-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+ 
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <section class="hero" id="brochureHero">
+  <video autoplay muted loop playsinline>
+    <source src="/HTML_Project/vidoes/videoplayback.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <h2>Download Brochures</h2>
+    <p>Choose your Tesla model to download its official brochure.</p>
+  </div>
+</section>
+
+
+  <section class="filter-section">
+    <div class="filter-controls">
+      <label for="modelFilter">
+        Select Model:
+        <select id="modelFilter">
+          <option value="all">All Models</option>
+          <option value="Model 3">Model 3</option>
+          <option value="Model S">Model S</option>
+          <option value="Model X">Model X</option>
+          <option value="Model Y">Model Y</option>
+          <option value="Roadster">Roadster</option>
+          <option value="Cybertruck">Cybertruck</option>
+        </select>
+      </label>
+      <button onclick="filterBrochures()">Filter</button>
+    </div>
+    <div class="brochures-list" id="brochureContainer">
+      <div class="brochure-item" data-model="Model 3">
+        <img src="pictures/2025_tesla_model-3_sedan_long-range_fq_oem_1_1600.avif" alt="Model 3">
+        <h3>Tesla Model 3</h3>
+        <a href="/HTML_Project/pdf/Tesla_Model_3_Brochure.pdf">Download PDF</a>
+      </div>
+      <div class="brochure-item" data-model="Model S">
+        <img src="pictures/Tesla Model S Plaid 2023 UK.webp" alt="Model S">
+        <h3>Tesla Model S</h3>
+        <a href="/HTML_Project/pdf/Tesla_Model_S_Brochure.pdf">Download PDF</a>
+      </div>
+      <div class="brochure-item" data-model="Model X">
+        <img src="pictures/model-x-social.jpg" alt="Model X">
+        <h3>Tesla Model X</h3>
+        <a href="/HTML_Project/pdf/Tesla_Model_X_Brochure.pdf">Download PDF</a>
+      </div>
+      <div class="brochure-item" data-model="Model Y">
+        <img src="pictures/Model-Y-Blue.webp" alt="Model Y">
+        <h3>Tesla Model Y</h3>
+        <a href="/HTML_Project/pdf/Tesla_Model_Y_Brochure.pdf">Download PDF</a>
+      </div>
+      <div class="brochure-item" data-model="Roadster">
+        <img src="pictures/Tesla Roadster.jpeg" alt="Roadster">
+        <h3>Tesla Roadster</h3>
+        <a href="/HTML_Project/pdf/Tesla_Roadster_Brochure.pdf">Download PDF</a>
+      </div>
+      <div class="brochure-item" data-model="Cybertruck">
+        <img src="pictures/Tesla CyberTruck.jpeg" alt="Cybertruck">
+        <h3>Tesla Cybertruck</h3>
+        <a href="/HTML_Project/pdf/Tesla_Cybertruck_Brochure.pdf">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function filterBrochures() {
+      const filter = document.getElementById('modelFilter').value;
+      document.querySelectorAll('.brochure-item').forEach(item => {
+        if (filter === 'all' || item.dataset.model === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

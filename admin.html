@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    /* Admin Page Styles */
+    .hero {
+      text-align: center;
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p  { font-size: var(--fs-5); }
+
+    .admin-dashboard-section {
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-2);
+      color: var(--light-gray);
+      border-top: 2px solid var(--space-cadet);
+    }
+    .admin-dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .admin-dashboard-card {
+      background: var(--oxford-blue-3);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .admin-dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255,80,80,0.4);
+    }
+    .admin-dashboard-card h3 {
+      font-family: var(--ff-chakra-petch);
+      font-size: var(--fs-4);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .admin-dashboard-card p {
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      color: var(--cadet-blue-creyola);
+      margin-bottom: 1rem;
+    }
+    .admin-dashboard-card a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      transition: background var(--transition);
+    }
+    .admin-dashboard-card a:hover {
+      background: hsl(1,91%,30%);
+    }
+
+    /* Admin Settings Form Styles */
+    .admin-settings-form {
+      background: var(--oxford-blue-3);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+
+    .admin-settings-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .admin-settings-form label {
+      font-family: var(--ff-chakra-petch);
+      font-size: var(--fs-5);
+      color: var(--white);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .admin-settings-form input {
+      width: 100%;
+      padding: 0.8rem;
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-5);
+      color: var(--oxford-blue-2);
+      background-color: var(--light-gray);
+      border: 1px solid var(--space-cadet);
+      border-radius: 6px;
+      margin-top: 0.5rem;
+    }
+
+    .admin-settings-form input:focus {
+      outline: none;
+      border-color: var(--international-orange-engineering);
+    }
+
+    .admin-settings-form .submit-btn {
+      padding: 0.8rem 1.5rem;
+      background-color: var(--international-orange-engineering);
+      color: var(--white);
+      border-radius: 6px;
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .admin-settings-form .submit-btn:hover {
+      background-color: hsl(1, 91%, 30%);
+    }
+
+    .success-message {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 6px;
+      margin-top: 1rem;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to the Admin Dashboard</h2>
+    <p>Manage the car listings, users, and more.</p>
+  </section>
+
+  <section class="admin-dashboard-section">
+    <h2>Admin Overview</h2>
+    <div class="admin-dashboard-cards">
+      <div class="admin-dashboard-card">
+        <h3>Manage Listings</h3>
+        <p>View, add, or remove car listings on the website.</p>
+        <a href="listings.html">Manage Listings</a>
+      </div>
+      <div class="admin-dashboard-card">
+        <h3>Manage Users</h3>
+        <p>View and manage user profiles and activities.</p>
+        <a href="dashboard.html">Manage Users</a>
+      </div>
+      <div class="admin-dashboard-card">
+        <h3>Manage Reviews</h3>
+        <p>Approve or remove user reviews from the site.</p>
+        <a href="reviews.html">Manage Reviews</a>
+      </div>
+      <div class="admin-dashboard-card">
+        <h3>Admin Settings</h3>
+        <p>Change settings for the admin panel.</p>
+        <a href="#admin-settings">Admin Settings</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="admin-dashboard-section" id="admin-settings">
+    <h2>Admin Settings</h2>
+    <div class="admin-settings-form">
+      <form id="adminSettingsForm">
+        <div class="form-group">
+          <label for="admin-name">Name</label>
+          <input type="text" id="admin-name" name="admin-name" value="Mahmoud Ibrahim" required />
+        </div>
+        <div class="form-group">
+          <label for="admin-email">Email</label>
+          <input type="email" id="admin-email" name="admin-email" value="admin@carzone.com" required />
+        </div>
+        <div class="form-group">
+          <label for="admin-role">Role</label>
+          <input type="text" id="admin-role" name="admin-role" value="Super Admin" required />
+        </div>
+        <div class="form-group">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" name="admin-password" placeholder="Enter new password" />
+        </div>
+        <div class="form-group">
+          <button type="button" class="submit-btn" onclick="saveChanges()">Save Changes</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="success-message" id="successMessage">
+      Settings saved successfully!
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function saveChanges() {
+      // Simulate saving data by showing a success message
+      document.getElementById('successMessage').style.display = 'block';
+
+      // Optionally, clear the success message after a few seconds
+      setTimeout(function() {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

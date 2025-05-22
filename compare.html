@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compare Teslas | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+    <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    /* General Styles for the Page */
+    body {
+      font-family: 'Mulish', sans-serif;
+      background-color: var(--oxford-blue-2);
+      margin: 0;
+      padding: 0;
+      color: var(--light-gray);
+    }
+    header {
+      background-color: var(--space-cadet);
+      padding: 1.5rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    header nav ul li {
+      margin: 0;
+    }
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    header nav ul li a:hover {
+      color: var(--international-orange-engineering);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem;
+      background-color: var(--oxford-blue-3);
+      color: white;
+      margin-top: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Compare Section */
+    .compare-section {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: var(--oxford-blue-2);
+      color: var(--light-gray);
+    }
+
+    .compare-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .compare-controls label {
+      display: flex;
+      flex-direction: column;
+      font-family: var(--ff-mulish);
+      font-size: 1.1rem;
+      color: var(--white);
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .compare-controls select {
+      padding: 0.8rem;
+      font-size: 1rem;
+      color: var(--eerie-black);
+      background-color: var(--white);
+      border: 1px solid var(--sonic-silver);
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    .compare-controls button {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      color: var(--white);
+      background-color: var(--international-orange-engineering);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .compare-controls button:hover {
+      background-color: hsl(1, 91%, 30%);
+    }
+
+    /* Compare Results */
+#compareResult {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+
+.car-item {
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--oxford-blue-3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+    .car-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .car-item h3 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .car-item p {
+      font-size: 1rem;
+      color: var(--cadet-blue-creyola);
+      margin: 0.5rem 0;
+    }
+
+    .car-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--space-cadet);
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Compare Teslas</h2>
+    <p>Pick two models to see their specs side-by-side.</p>
+  </section>
+
+  <section class="compare-section">
+    <div class="compare-controls">
+      <label for="modelA">
+        Model A:
+        <select id="modelA">
+          <option value="">--Select--</option>
+          <option>Model 3</option>
+          <option>Model S</option>
+          <option>Model X</option>
+          <option>Model Y</option>
+          <option>Roadster</option>
+          <option>Cybertruck</option>
+        </select>
+      </label>
+
+      <label for="modelB">
+        Model B:
+        <select id="modelB">
+          <option value="">--Select--</option>
+          <option>Model 3</option>
+          <option>Model S</option>
+          <option>Model X</option>
+          <option>Model Y</option>
+          <option>Roadster</option>
+          <option>Cybertruck</option>
+        </select>
+      </label>
+
+      <button id="compareBtn">Compare</button>
+    </div>
+
+    <div id="compareResult" class="car-listings"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const teslaData = {
+      "Model 3":    { price:"$39,990",  range:"272 mi",  topSpeed:"145 mph", img:"pictures/2025_tesla_model-3_sedan_long-range_fq_oem_1_1600.avif" },
+      "Model S":    { price:"$94,990",  range:"405 mi",  topSpeed:"155 mph", img:"pictures/Tesla Model S Plaid 2023 UK.webp" },
+      "Model X":    { price:"$99,990",  range:"340 mi",  topSpeed:"155 mph", img:"pictures/model-x-social.jpg" },
+      "Model Y":    { price:"$49,990",  range:"330 mi",  topSpeed:"135 mph", img:"pictures/Model-Y-Blue.webp" },
+      "Roadster":   { price:"$200,000", range:"620 mi",  topSpeed:"250+ mph", img:"pictures/Tesla Roadster.jpeg" },
+      "Cybertruck": { price:"$39,900",  range:"250–500 mi", topSpeed:"130 mph", img:"pictures/Tesla CyberTruck.jpeg" }
+    };
+
+    document.getElementById('compareBtn').addEventListener('click', () => {
+      const a = document.getElementById('modelA').value;
+      const b = document.getElementById('modelB').value;
+      const container = document.getElementById('compareResult');
+      container.innerHTML = '';
+
+      [a, b].forEach(model => {
+        if (teslaData[model]) {
+          const d = teslaData[model];
+          const card = document.createElement('div');
+          card.className = 'car-item';
+          card.innerHTML = `
+            <img src="${d.img}" alt="Tesla ${model}">
+            <h3>Tesla ${model}</h3>
+            <p>Price: ${d.price}</p>
+            <p>Range: ${d.range}</p>
+            <p>Top Speed: ${d.topSpeed}</p>
+          `;
+          container.appendChild(card);
+        }
+      });
+    });
+  </script>
+</body

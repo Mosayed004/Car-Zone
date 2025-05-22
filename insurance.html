@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Options | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Insurance Options</h2>
+    <p>Explore the best insurance options for your new car.</p>
+  </section>
+
+  <!-- Insurance Plans Section -->
+  <section class="insurance-plans">
+    <h2>Our Insurance Plans</h2>
+
+    <div class="insurance-card">
+      <h3>Basic Coverage</h3>
+      <p>Cover the basics with our low-cost basic coverage plan.</p>
+      <a href="javascript:void(0);" onclick="toggleDetails(this)">Read More</a>
+      <div class="more-info" style="display: none;">
+        <p>This plan includes liability and basic collision protection. Ideal for minimal legal coverage.</p>
+      </div>
+    </div>
+
+    <div class="insurance-card">
+      <h3>Comprehensive Coverage</h3>
+      <p>Get full coverage for peace of mind, including accidents, theft, and more.</p>
+      <a href="javascript:void(0);" onclick="toggleDetails(this)">Read More</a>
+      <div class="more-info" style="display: none;">
+        <p>Covers things like natural disasters, fire, vandalism, and theft. Great for high-value cars.</p>
+      </div>
+    </div>
+
+    <div class="insurance-card">
+      <h3>Premium Coverage</h3>
+      <p>For ultimate protection, including roadside assistance and more.</p>
+      <a href="javascript:void(0);" onclick="toggleDetails(this)">Read More</a>
+      <div class="more-info" style="display: none;">
+        <p>Includes everything in comprehensive plus extras like roadside help, rental coverage, and more.</p>
+      </div>
+    </div>
+
+    <div class="insurance-card">
+      <h3>Liability Coverage</h3>
+      <p>Essential coverage to protect against third-party claims in accidents.</p>
+      <a href="javascript:void(0);" onclick="toggleDetails(this)">Read More</a>
+      <div class="more-info" style="display: none;">
+        <p>This is the basic coverage required by law. Covers damages you cause to other people or property.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Need Help?</h2>
+    <p>If you need assistance with our insurance plans, feel free to reach out!</p>
+    <a href="contact.html">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDetails(link) {
+      const moreInfo = link.nextElementSibling;
+      if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
+        moreInfo.style.display = "block";
+        link.textContent = "Read Less";
+      } else {
+        moreInfo.style.display = "none";
+        link.textContent = "Read More";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upcoming Models | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+       <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    /* Upcoming Models Styles */
+    .hero {
+      text-align: center;
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p  { font-size: var(--fs-5); }
+
+    .models-section {
+      background: var(--oxford-blue-2);
+      padding: var(--section-padding) 1rem;
+      color: var(--light-gray);
+    }
+    .models-section h2 {
+      text-align: center;
+      font-size: var(--fs-2);
+      margin-bottom: 2rem;
+      color: var(--white);
+    }
+
+    .models-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .model-item {
+      background: var(--oxford-blue-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .model-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255,80,80,0.4);
+    }
+    .model-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .model-item h3 {
+      font-family: var(--ff-chakra-petch);
+      font-size: var(--fs-4);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .model-item p {
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      color: var(--cadet-blue-creyola);
+      margin-bottom: 1rem;
+    }
+    .model-item a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      transition: background var(--transition);
+    }
+    .model-item a:hover {
+      background: hsl(1,91%,30%);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Upcoming Car Models</h2>
+    <p>Discover the future of cars with these exciting upcoming models.</p>
+  </section>
+
+  <section class="models-section">
+    <h2>Featured Upcoming Models</h2>
+    <div class="models-list">
+      <div class="model-item">
+        <img src="pictures/2025 speedster x.jpg" alt="Model 1" />
+        <h3>2025 Speedster X</h3>
+        <p>A high-performance electric sports car with unmatched speed and efficiency.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="model-item">
+        <img src="pictures/2025 Vision SUV.jpeg" alt="Model 2" />
+        <h3>2025 Vision SUV</h3>
+        <p>The perfect blend of luxury and sustainability, designed for family adventures.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="model-item">
+        <img src="pictures/2025 Xtreme Pickup.jpg" alt="Model 3" />
+        <h3>2025 Xtreme Pickup</h3>
+        <p>Durability and power in one, this pickup is built to conquer any terrain.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="model-item">
+        <img src="pictures/2025 Nova Coupe.jpg" alt="Model 4" />
+        <h3>2025 Nova Coupe</h3>
+        <p>Stylish, fast, and sleek, the Nova Coupe redefines the modern sports car.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+</body>
+</html>

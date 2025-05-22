@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Calculator | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+     <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p { font-size: var(--fs-5); }
+
+    .calculator-section {
+      background: var(--oxford-blue-2);
+      padding: var(--section-padding);
+      color: var(--light-gray);
+      border-top: 2px solid var(--space-cadet);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calculator-form {
+      background: var(--oxford-blue-3);
+      padding: 2rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      font-family: var(--ff-mulish);
+    }
+
+    .calculator-form label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      color: var(--white);
+    }
+
+    .calculator-form input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--sonic-silver);
+      font-size: var(--fs-5);
+    }
+
+    .calculator-form button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      font-size: var(--fs-5);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .calculator-form button:hover {
+      background: hsl(1, 91%, 30%);
+    }
+
+    .result-box {
+      margin-top: 2rem;
+      background: var(--rich-black-fogra-29);
+      padding: 1.5rem;
+      border-radius: 6px;
+      text-align: center;
+      color: var(--white);
+      font-size: var(--fs-4);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Loan Calculator</h2>
+    <p>Estimate your monthly payment easily</p>
+  </section>
+
+  <section class="calculator-section">
+    <form class="calculator-form" onsubmit="calculateLoan(event)">
+      <label for="price">Car Price (EGP)</label>
+      <input type="number" id="price" placeholder="e.g. 800000" required />
+
+      <label for="downPayment">Down Payment (EGP)</label>
+      <input type="number" id="downPayment" placeholder="e.g. 100000" required />
+
+      <label for="interest">Annual Interest Rate (%)</label>
+      <input type="number" id="interest" step="0.1" placeholder="e.g. 10.5" required />
+
+      <label for="years">Loan Term (Years)</label>
+      <input type="number" id="years" placeholder="e.g. 5" required />
+
+      <button type="submit">Calculate Monthly Payment</button>
+
+      <div class="result-box" id="resultBox" style="display: none;">
+        Monthly Payment: <span id="monthlyPayment"></span> EGP
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function calculateLoan(event) {
+      event.preventDefault();
+
+      const price = parseFloat(document.getElementById('price').value);
+      const downPayment = parseFloat(document.getElementById('downPayment').value);
+      const interestRate = parseFloat(document.getElementById('interest').value) / 100 / 12;
+      const years = parseInt(document.getElementById('years').value);
+      const numberOfPayments = years * 12;
+
+      const loanAmount = price - downPayment;
+
+      let monthlyPayment;
+
+      if (interestRate === 0) {
+        monthlyPayment = loanAmount / numberOfPayments;
+      } else {
+        const x = Math.pow(1 + interestRate, numberOfPayments);
+        monthlyPayment = (loanAmount * interestRate * x) / (x - 1);
+      }
+
+      document.getElementById('monthlyPayment').textContent = monthlyPayment.toFixed(2);
+      document.getElementById('resultBox').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

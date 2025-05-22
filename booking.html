@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Test Drive | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p { font-size: var(--fs-5); }
+
+    .booking-section {
+      background: var(--oxford-blue-2);
+      padding: var(--section-padding);
+      color: var(--white);
+    }
+
+    .booking-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--oxford-blue-3);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .booking-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-5);
+    }
+
+    .booking-form input,
+    .booking-form select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--sonic-silver);
+      font-size: var(--fs-5);
+      color: var(--eerie-black);
+    }
+
+    .booking-form button {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: var(--fs-5);
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background var(--transition);
+      font-family: var(--ff-mulish);
+    }
+
+    .booking-form button:hover {
+      background: hsl(1, 91%, 30%);
+    }
+
+    .success-message {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <h2>Book a Test Drive</h2>
+    <p>Experience your dream Tesla firsthand. Fill out the form to schedule your test drive.</p>
+  </section>
+
+  <section class="booking-section">
+    <form class="booking-form" id="testDriveForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="model">Select Model:</label>
+      <select id="model" name="model" required>
+        <option value="">--Choose a Model--</option>
+        <option value="Model 3">Model 3</option>
+        <option value="Model S">Model S</option>
+        <option value="Model X">Model X</option>
+        <option value="Model Y">Model Y</option>
+        <option value="Roadster">Roadster</option>
+        <option value="Cybertruck">Cybertruck</option>
+      </select>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required>
+
+      <button type="submit">Book Test Drive</button>
+
+      <div class="success-message" id="successMessage">
+        ✅ Test drive booked successfully!
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Handle form submission without reloading
+    document.getElementById("testDriveForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      // Show success message
+      const message = document.getElementById("successMessage");
+      message.style.display = "block";
+
+      // Clear the form
+      this.reset();
+
+      // Hide message after 4 seconds
+      setTimeout(() => {
+        message.style.display = "none";
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

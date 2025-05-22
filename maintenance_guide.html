@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maintenance Guide | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+       <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    /* Maintenance Guide Styles */
+    .hero {
+      text-align: center;
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p  { font-size: var(--fs-5); }
+
+    .guide-section {
+      background: var(--oxford-blue-2);
+      padding: var(--section-padding) 1rem;
+      color: var(--light-gray);
+    }
+    .guide-section h2 {
+      text-align: center;
+      font-size: var(--fs-2);
+      margin-bottom: 2rem;
+      color: var(--white);
+    }
+
+    .guide-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .guide-item {
+      background: var(--oxford-blue-3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .guide-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255,80,80,0.4);
+    }
+    .guide-item h3 {
+      font-family: var(--ff-chakra-petch);
+      font-size: var(--fs-4);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .guide-item p {
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      color: var(--cadet-blue-creyola);
+      margin-bottom: 1rem;
+    }
+    .guide-item a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      transition: background var(--transition);
+    }
+    .guide-item a:hover {
+      background: hsl(1,91%,30%);
+    }
+    #maintenanceHero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+#maintenanceHero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#maintenanceHero .hero-content {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+#maintenanceHero h2 {
+  font-size: var(--fs-1);
+  margin-bottom: 0.5rem;
+  font-family: var(--ff-chakra-petch);
+}
+
+#maintenanceHero p {
+  font-size: var(--fs-5);
+  font-family: var(--ff-mulish);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="maintenanceHero">
+  <video autoplay muted loop playsinline id="maintenanceVideo">
+    <source src="/HTML_Project/vidoes/4489802-uhd_4096_2160_25fps.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <h2>Car Maintenance Guide</h2>
+    <p>Keep your vehicle running smoothly with these essential maintenance tips.</p>
+  </div>
+</section>
+
+
+  <section class="guide-section">
+    <h2>Essential Maintenance Tasks</h2>
+    <div class="guide-list">
+      <div class="guide-item">
+        <h3>Oil Changes</h3>
+        <p>Regular oil and filter changes ensure your engine runs cleanly and efficiently.</p>
+        <a href="/HTML_Project/pdf/Oil_Change_Guide_FINAL.pdf">Learn More</a>
+      </div>
+      <div class="guide-item">
+        <h3>Tire Care</h3>
+        <p>Rotate, balance, and check tire pressure to extend tire life and improve safety.</p>
+        <a href="/HTML_Project/pdf/Tire_Care_Guide_FINAL.pdf">Learn More</a>
+      </div>
+      <div class="guide-item">
+        <h3>Brake Inspections</h3>
+        <p>Have your brakes inspected regularly to ensure optimal stopping performance.</p>
+        <a href="pdf/Brake_Inspection_Guide.pdf">Learn More</a>
+      </div>
+      <div class="guide-item">
+        <h3>Fluid Checks</h3>
+        <p>Check coolant, brake, transmission, and power steering fluids to prevent breakdowns.</p>
+        <a href="pdf/Fluid_Checks_Guide.pdf">Learn More</a>
+      </div>
+      <div class="guide-item">
+        <h3>Battery Health</h3>
+        <p>Test your battery and clean terminals to avoid unexpected failures.</p>
+        <a href="pdf/Battery_Maintenance_Guide.pdf">Learn More</a>
+      </div>
+      <div class="guide-item">
+        <h3>Air Filters</h3>
+        <p>Replace engine and cabin air filters to maintain performance and air quality.</p>
+        <a href="pdf/Wiper_Blades_Guide.pdf">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+</body>
+</html>

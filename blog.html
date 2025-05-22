@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    .hero {
+      text-align: center;
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p  { font-size: var(--fs-5); }
+
+    .blog-section {
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-2);
+      color: var(--light-gray);
+    }
+
+    .blog-section h2 {
+      font-size: var(--fs-2);
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .blog-post {
+      background: var(--oxford-blue-3);
+      border-radius: 8px;
+      margin: 1rem 0;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .blog-post h3 {
+      font-size: var(--fs-3);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .blog-post p {
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      color: var(--cadet-blue-creyola);
+    }
+
+    .blog-post button {
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+      background: none;
+      border: none;
+      color: var(--international-orange-engineering);
+      cursor: pointer;
+      padding: 0;
+      margin-top: 1rem;
+      display: inline-block;
+      transition: color var(--transition);
+    }
+
+    .blog-post button:hover {
+      color: var(--pastel-pink);
+    }
+
+    .full-content {
+      display: none;
+      margin-top: 1rem;
+      color: var(--light-gray);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>CarZone Blog</h2>
+    <p>Stay updated with the latest car news, tips, and reviews from CarZone.</p>
+  </section>
+
+  <section class="blog-section">
+    <h2>Latest Posts</h2>
+
+    <!-- Blog Post 1 -->
+    <div class="blog-post">
+      <h3>Top 5 Tips for Buying Your First Car</h3>
+      <p>Purchasing your first car can be an exciting yet overwhelming experience...</p>
+      <button onclick="togglePost(this)">Read More</button>
+      <div class="full-content">
+        <p>Start by setting a budget and understanding your financial limits. Research different models that suit your needs and compare features. Always test drive the car and have it inspected if it's used. Don’t forget to factor in insurance and maintenance costs. And most importantly, don’t rush—take your time!</p>
+      </div>
+    </div>
+
+    <!-- Blog Post 2 -->
+    <div class="blog-post">
+      <h3>How to Choose the Best Car Insurance Plan</h3>
+      <p>Choosing the right car insurance can save you money and give you peace of mind...</p>
+      <button onclick="togglePost(this)">Read More</button>
+      <div class="full-content">
+        <p>Start by evaluating your coverage needs—liability, comprehensive, collision, etc. Compare quotes from multiple insurers and check reviews for customer service. Consider bundling with home insurance for discounts. Understand what’s included in the policy and what’s not before signing.</p>
+      </div>
+    </div>
+
+    <!-- Blog Post 3 -->
+    <div class="blog-post">
+      <h3>Electric Cars: The Future of Driving</h3>
+      <p>Electric cars are becoming more popular than ever...</p>
+      <button onclick="togglePost(this)">Read More</button>
+      <div class="full-content">
+        <p>With zero tailpipe emissions and lower running costs, electric cars are a game changer. Government incentives and growing charging infrastructure make them more accessible. As battery technology improves, range anxiety is becoming a thing of the past. The future is electric.</p>
+      </div>
+    </div>
+
+    <!-- Blog Post 4 -->
+    <div class="blog-post">
+      <h3>Maintaining Your Car: A Simple Guide</h3>
+      <p>Keeping your car in good condition is key to its longevity...</p>
+      <button onclick="togglePost(this)">Read More</button>
+      <div class="full-content">
+        <p>Check your oil, brake fluid, and coolant regularly. Keep tires inflated and rotate them every 5,000 miles. Wash and wax your car to protect the paint. Follow your service schedule and don’t ignore warning lights. Simple upkeep saves big bucks long term.</p>
+      </div>
+    </div>
+
+    <!-- Blog Post 5 -->
+    <div class="blog-post">
+      <h3>Top Car Brands You Should Know</h3>
+      <p>Looking to buy a new car? Here's a rundown of some of the most popular and reliable car brands...</p>
+      <button onclick="togglePost(this)">Read More</button>
+      <div class="full-content">
+        <p>Brands like Toyota, Honda, and Mazda offer reliability and value. Tesla leads in electric innovation. BMW and Mercedes-Benz are known for luxury and performance. Do your research and test drive a few before making a decision that fits your style and needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function togglePost(button) {
+      const content = button.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        button.textContent = "Read More";
+      } else {
+        content.style.display = "block";
+        button.textContent = "Show Less";
+      }
+    }
+  </script>
+</body>
+</html>

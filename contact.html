@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | CarZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="icon" href="pictures/CarZone.jpg" type="image/jpeg">
+  <style>
+    .hero {
+      text-align: center;
+      padding: var(--section-padding) 1rem;
+      background: var(--oxford-blue-3);
+      color: var(--white);
+    }
+    .hero h2 { font-size: var(--fs-1); margin-bottom: 0.5rem; }
+    .hero p  { font-size: var(--fs-5); }
+
+    .contact-section {
+      background: var(--oxford-blue-2);
+      padding: var(--section-padding) 1rem;
+      color: var(--light-gray);
+    }
+    .contact-section h2 {
+      text-align: center;
+      font-size: var(--fs-2);
+      margin-bottom: 2rem;
+      color: var(--white);
+    }
+
+    .contact-form {
+      background: var(--oxford-blue-3);
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      background: var(--gray-5);
+      border: 1px solid var(--gray-3);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: var(--ff-mulish);
+      font-size: var(--fs-6);
+    }
+
+    .contact-form button {
+      background: var(--international-orange-engineering);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: var(--fs-6);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: hsl(1, 91%, 30%);
+    }
+
+    .success-message {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Welcome to CarZone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="listings.html">Car Listings</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="brochures.html">Brochures</a></li>
+        <li><a href="booking.html">Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="loan.html">Loan Calculator</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you. Reach out with any questions or inquiries!</p>
+  </section>
+
+  <section class="contact-section">
+    <h2>Get In Touch</h2>
+    <div class="contact-form">
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="success-message" id="successMessage">
+        ✅ Message sent successfully!
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CarZone. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Prevent form from going to another page and show success message
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Stop form from submitting normally
+
+      // Show the success message
+      document.getElementById("successMessage").style.display = "block";
+
+      // Optionally clear form fields
+      this.reset();
+
+      // Hide success message after 4 seconds
+      setTimeout(() => {
+        document.getElementById("successMessage").style.display = "none";
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
